@@ -19,6 +19,17 @@ get '/' do
   }.to_json
 end
 
+get '/api/user' do
+  _, auth_token = request.env["HTTP_AUTHORIZATION"]&.split(" ", 2)
+
+  halt 401, 'Unauthorized' if auth_token.nil? || auth_token.empty?
+
+  # fake
+  {
+    name: auth_token
+  }.to_json
+end
+
 post '/api/users/:app_owner_name/apps' do |app_owner_name|
   halt 404, "#{app_owner_name} is not found" unless app_owner_name.start_with?("owner_")
 
