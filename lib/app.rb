@@ -28,7 +28,9 @@ get '/api/user' do
   # fake
   {
     error: false,
-    name: auth_token
+    results: {
+      name: auth_token
+    }
   }.to_json
 end
 
