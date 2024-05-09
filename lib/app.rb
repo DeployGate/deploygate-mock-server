@@ -4,6 +4,8 @@ require 'json'
 require_relative 'response/binary'
 require_relative 'response/user'
 
+set :port, 3000
+
 error 400..503 do
   {
     error: true,
