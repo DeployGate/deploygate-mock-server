@@ -15,6 +15,7 @@ end
 
 get '/' do
   {
+    error: false,
     message: 'Hello world'
   }.to_json
 end
@@ -26,6 +27,7 @@ get '/api/user' do
 
   # fake
   {
+    error: false,
     name: auth_token
   }.to_json
 end
