@@ -6,6 +6,7 @@ RUN apt-get update -qq
 
 WORKDIR /usr/src/app
 
+COPY .ruby-version /usr/src/app/.ruby-version
 COPY Gemfile /usr/src/app/Gemfile
 COPY Gemfile.lock /usr/src/app/Gemfile.lock
 
