@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-bundle exec ruby lib/app.rb
+bundle exec thin -R config.ru start

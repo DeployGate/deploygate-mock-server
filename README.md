@@ -2,6 +2,15 @@
 
 *This small server image is Only for testing*. Developer tools like gradle plugin send requests to this image from some test cases.
 
+# Development
+
+```bash
+# For Mac ARM users
+bundle config --local build.thin --with-cflags="-Wno-error=implicit-function-declaration"
+bundle i
+bundle exec thin -R config.ru start
+```
+
 # Spec
 
 ```
