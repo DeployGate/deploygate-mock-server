@@ -1,6 +1,12 @@
 # DeployGate Mock Server
 
-*Only for testing*
+*This small server image is Only for testing*. Developer tools like gradle plugin send requests to this image from some test cases.
 
-- 開発用ツールからリクエストを飛ばして確認するようなテストケースで利用する
-- 必須パラメータとエンドポイントが正しいかどうかを確認する以上の機能を現在は持っていない
+# Spec
+
+```
+POST /api/users/:app_owner_name/apps
+```
+
+- `:app_owner_name` must start with `owner_`. Otherwise, 404 will be returned.
+- `file` parameter is required and must be a file part. Otherwise, 400 will be returned.

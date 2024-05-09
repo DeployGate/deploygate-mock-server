@@ -39,20 +39,24 @@ post '/api/users/:app_owner_name/apps' do |app_owner_name|
   )
 
   status 201
-  Binary.create(
-    name: 'com.deploygate.example',
-    package_name: 'com.deploygate.example',
-    os_name: 'Android',
-    version_code: 1,
-    version_name: '1.0',
-    sdk_version: 26,
-    target_sdk_version: 26,
-    signature: '0ee66cf426fabc7455b6aef92eca60ab84deb387',
-    md5: 'bfd191eb6083d5203392c6b03668dbad',
-    revision: 18,
-    file_size: 10000,
-    message: 'A build message',
-    updated_at: 1673597091,
-    user: user
-  ).to_json
+
+  {
+    error: false,
+    results: Binary.create(
+      name: 'com.deploygate.example',
+      package_name: 'com.deploygate.example',
+      os_name: 'Android',
+      version_code: 1,
+      version_name: '1.0',
+      sdk_version: 26,
+      target_sdk_version: 26,
+      signature: '0ee66cf426fabc7455b6aef92eca60ab84deb387',
+      md5: 'bfd191eb6083d5203392c6b03668dbad',
+      revision: 18,
+      file_size: 10000,
+      message: 'A build message',
+      updated_at: 1673597091,
+      user: user
+    )
+  }.to_json
 end
