@@ -20,7 +20,7 @@ get '/' do
   }.to_json
 end
 
-get '/api/user' do
+get '/api/sessions/user' do
   _, auth_token = request.env["HTTP_AUTHORIZATION"]&.split(" ", 2)
 
   halt 401, 'Unauthorized' if auth_token.nil? || auth_token.empty?
