@@ -1,6 +1,8 @@
 # DeployGate Mock Server
 
-*This small server image is Only for testing*. Developer tools like gradle plugin send requests to this image from some test cases.
+このリポジトリとイメージはテスト目的で作った Stub 用サーバーイメージです。一部を除き、処理やレスポンス形式は実際のものとは異なります。
+
+開発ツールのテストで利用しているもので、Feature Request などは受け付けていませんのでご了承ください。
 
 # Development
 
@@ -19,3 +21,9 @@ POST /api/users/:app_owner_name/apps
 
 - `:app_owner_name` must start with `owner_`. Otherwise, 404 will be returned.
 - `file` parameter is required and must be a file part. Otherwise, 400 will be returned.
+
+# Release
+
+- デフォルトブランチへのマージ、あるいは workflow_dispatch を使うと GitHub Packages にリリースされます
+    - [./.github/workflows/release.yml](./.github/workflows/release.yml)
+    - https://github.com/DeployGate/deploygate-mock-server/pkgs/container/deploygate-mock-server
